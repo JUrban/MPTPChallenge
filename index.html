@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+<TITLE>The MPTP Challenges</TITLE>
+</HEAD>
+<BODY ALIGN=JUSTIFY>
+<HR><!------------------------------------------------------------------------>
+<TABLE BORDER=0 WIDTH=100%>
+<TR VALIGN=TOP>
+     <TD COLSPAN=3 ALIGN=CENTER>
+          <H1>The MPTP $100 Challenges<H1>
+<TR VALIGN=CENTER>
+     <TD ALIGN=LEFT WIDTH=20%> <A HREF="BushyGIF.html">
+          <IMG SRC="US_$100_bushy.jpg" WIDTH=100%></IMG></A>
+     </TD>
+     <TD ALIGN=CENTER WIDTH=60%>
+          <A HREF="DAGGIF.html">
+          <IMG SRC="IDVTree.GIF" WIDTH=50%></A>
+     </TD>
+     <TD ALIGN=RIGHT WIDTH=20%> <A HREF="ChainyGIF.html">
+          <IMG SRC="US_$100_cheney.jpg" WIDTH=100%></IMG></A>
+     </TD>
+</TR>
+</TABLE>
+<P>
+<HR><!------------------------------------------------------------------------>
+<CENTER>
+<H2>This Challenge is Completed</H2>
+</CENTER>
+<HR><!------------------------------------------------------------------------>
+<CENTER>
+<H2>Introduction</H2>
+</CENTER>
+
+The MPTP $100 Challenges are sets of classical first-order reasoning
+problems, expressed in the <A HREF="http://www.tptp.org">TPTP language</A>,
+to be proved by fully automated reasoning systems, within specified 
+reasonable resource constraints.
+The challenge problems are based on the Mizar Mathematical Library.
+Details of the challenge problems, and the system execution environment,
+are described below.
+<P>
+The goal of the MPTP challenges is to boost the development of Automated 
+Theorem Proving (ATP) and Artificial Intelligence (AI) methods and tools for 
+reasoning in large theories that involve large numbers of consistently used 
+concepts. 
+Such tools are increasingly needed for proof assistance over large formal 
+mathematical knowledge bases, and also more generally for reasoning over 
+any sufficiently semantically specified "real-world" knowledge bases.
+<P>
+The winners of the MPTP challenges will be announced at 
+<A HREF="http://www-cade.kohlhase.net/meetings/cade21">CADE-21</A>, 
+and will each receive $100 in real US dollars ... who says there's no 
+money in ATP!
+<P>
+<HR><!------------------------------------------------------------------------>
+<CENTER>
+<H2>The Mizar Mathematical Library</H2>
+</CENTER>
+
+<A HREF="http://mizar.org/">Mizar</A> is a formal language derived from the 
+mathematical vernacular.
+It is characterized by the intuitive Jaskowski-style of natural deduction.
+It is also a proof checker for this language, and a long-term project focused 
+on formalization of mathematics. 
+There are two important features that distinguish Mizar from other proof 
+assistants: 
+<UL>
+<LI> It is essentially a first-order system (based on set theory). 
+<LI> It focuses on the development of the large Mizar Mathematical Library 
+     (MML), which (as of July 2006) contains 942 formal articles (with 42694 
+     theorems, and 7957 definitions) from various fields of mathematics.
+</UL>
+
+Each article in the MML typically contains several theorems, along with 
+some set-theoretical definitions of various mathematical notions.
+The theorems are proved by natural deduction, from axioms (including
+definitions) of set theory, and using previously proved theorems as lemmas.
+The dependencies between theorems, in the sense of using previously proved 
+theorems as lemmas the proofs of subsequent theorems, form a directed acyclic 
+graph (DAG).
+The leaves of the DAG are the axioms of set theory (including definitions), 
+and the internal and root nodes are Mizar theorems.
+Edges run from the axioms and lemmas used in each proof, to the the proved 
+theorem.
+The DAG has a cannonical topological sorting (i.e. a DAG-compatible linear 
+order) called <EM>the MML order</EM>. 
+This linear order is given mainly by the chronological order of article 
+submissions to the MML.
+<P>
+The <A HREF="http://wiki.mizar.org/cgi-bin/twiki/view/Mizar/MpTP">MPTP</A> 
+project makes Mizar theorems available as first order ATP problems, by 
+translating the axioms, lemmas, and conjecture to plain first order logic 
+using relativization of types and de-anonymization of abstract terms.
+Additionally, necessary background information that is known to the
+Mizar checker, e.g., about the type hierarchies used, is included as axioms.
+The resultant ATP problems are exported in the
+<A HREF="http://www.tptp.org/TPTP/SyntaxBNF.html">TPTP language</A>.
+<P>
+<HR><!------------------------------------------------------------------------>
+<CENTER>
+<H2>The Challenges</H2>
+</CENTER>
+
+A sub-DAG of the Mizar theorem graph, as shown in the heading above, has 
+been selected as the basis for the challenge (click on the image for a
+larger version).
+The root of this DAG is the general topological 
+<A HREF="http://lipa.ms.mff.cuni.cz/~urban/xmlmml/html_abstr.930/yellow19.html#E37">
+theorem</A> relating compactness in terms of open covers and in terms of nets 
+(generalization of sequences). 
+It says that every net on a compact topological space has a cluster point. 
+A converse implication holds too, i.e., compact spaces are exactly those with 
+every net having cluster points. 
+This 
+<A HREF="http://lipa.ms.mff.cuni.cz/~urban/xmlmml/html.930/yellow19.html#T35">
+equivalence</A> is the topological generalization of the 
+<A HREF="http://en.wikipedia.org/wiki/Theorem_of_Bolzano-Weierstrass">
+Bolzano-Weierstrass theorem</A>. 
+Only one implication was chosen for the MPTP challenge, in order to make the 
+size of the DAG reasonable.
+The DAG forms a <EM>bush</EM> of theorems, in which each branch from an
+leaf to the root forms a <EM>chain</EM> of theorems that Mizar uses as 
+lemmas in proofs of subsequent theorems in the chain.
+For the MPTP challenge, each internal and root node of the DAG is used to 
+form two ATP problems, as described below.
+You can view the Mizar presentation of 
+<A HREF="http://lipa.ms.mff.cuni.cz/~urban/xmlmml/html_abstr.930/00mptp_chall_topdown.html">
+just the MPTP challenge problems</A>,
+in topdown (reverse MML) order</A>, with access to the Mizar justifications.
+<P>
+The challenge is divided into two divisions: the 
+<EM><A HREF="BushyGIF.html">bushy</A> division</EM>, and the
+<EM><A HREF="ChainyGIF.html">chainy</A> division</EM>.
+<UL>
+<LI> In the bushy division, each internal and root node of the DAG is converted 
+     to a FOF problem, using the MPTP translation.
+     The conjecture of the problem is the theorem of the node, and the axioms of 
+     the problem are the parent leaves of the node, augmented by the necessary 
+     background.
+     Thus the problems in this division require each theorem to be proved from
+     the relevant preexisting MML theorems, emulating a smart user who knows 
+     what ingredients should be involved in the proof, and who is using an ATP 
+     system to find the formal proof.
+<P>
+<LI> In the chainy division, each bushy problem is augmented by lemmas (and 
+     associated symbol definitions) formed from all the DAG nodes that precede 
+     the conjecture in the MML order.
+     Such lemmas were, roughly speaking, available at the time of proving the 
+     theorem in Mizar.
+     Some of the lemmas (those that are in the <EM>chain</EM>s of ancestors of 
+     the conjecture) are likely to be useful for finding a proof, while the 
+     others (those that are not ancestors of the conjecture) are unlikely to 
+     be useful.
+     Thus the problems in the chainy division require the theorem to be proved 
+     "from the whole available MML", emulating a lazy user who does not want to 
+     do any work, and wants to have good tools for automated reasoning over a 
+     large knowledge base. 
+     A smart (possibly heuristical) selection of relevant parts of MML is 
+     therefore likely to be needed for this division. 
+     Re-using knowledge gained from solving previous chainy problems should be 
+     therefore useful (note that the symbols in all problems are used 
+     consistently in both divisions, i.e., they always have the same semantics).
+     Using complementary AI techniques like machine learning from solved 
+     problems is encouraged. 
+     See below for the flexible scheduling arrangements useful for this.
+</UL>
+<CENTER>
+<A HREF="MPTPChallenge.tgz">
+<STRONG>Here are the challenge problems in TPTP format</STRONG></A>
+(this distribution includes some bugfixes, and supercedes the original.)
+</CENTER>
+<P>
+Systems are entered into the challenge by submitting the source code, with
+installation instructions, to the organizers by the 
+<A HREF="../CASC/21/Schedule.html">CASC system installation deadline</A> 
+(just to make Geoff's life easier :-).
+Systems may be pretuned for the challenge, but not to the extent of recording 
+specific information about individual problems.
+Systems may retune themselves in any way during execution, including recording 
+specific information about encountered problems.
+The source code will be publically available from this WWW site, 
+providing a research resource and public scrutiny to discourage any cheating.
+<P>
+Execution of a system in each division is governed by an overall CPU time 
+limit of 300s times the number of problems.
+Systems may accept, as a command line parameter, the name of a file that 
+lists the names of all the problem files (one problem file name per line), 
+and then schedule the use of the overall time limit internally.
+Alternatively, the organizers can run the system independently on each
+problem with a 300s limit - the same command line is used for all problems 
+(in this mode, if a problem is solved in less than 300s the remaining time 
+is forfeit, i.e., it's smarter to use the overall limit mode).
+<P>
+The winner of each division is the system that solves the most problems.
+In the event of a tie, the system with the lowest average CPU time used over 
+the problems solved is the winner.
+<P>
+The MPTP challenge is organized by
+<A HREF="http://kti.mff.cuni.cz/~urban/">Josef Urban</A> and
+<A HREF="http://www.cs.miami.edu/~geoff/">Geoff Sutcliffe</A>.
+Questions should be emailed to the organizers after you've checked the
+<A HREF="http://wiki.mizar.org/cgi-bin/twiki/view/Mizar/MpTPChallengeFAQ?unlock=on">FAQ</A> for the answer.
+<P>
+<HR><!------------------------------------------------------------------------>
+<CENTER>
+<H2>Results Accumulated - Mon Jul 16 12:18:43 EDT 2007</H2>
+
+<CENTER>
+<TABLE BORDER=1>
+<TR ALIGN=JUSTIFY VALIGN=TOP>
+     <TD WIDTH=33%>
+          <A HREF="Results/SVGResults.html">Interactive SVG presentation</A><BR>
+          (Thanks to <A HREF="http://www.cs.miami.edu/students/strac/">
+          Steven Trac</A>)<BR>
+          Mouse over nodes to see which systems have solved the corresponding 
+          problem.
+          Mouse over and click the progress bars for useful effects.
+<!--
+     <TD WIDTH=33%>
+          <A HREF="Results/HTMLResults.html">Plain HTML presentation</A><BR>
+          (For people whose browers suck)
+-->
+     <TD WIDTH=33%>
+          Raw <A HREF="Results/BushyResults.data">Bushy</A>
+          and <A HREF="Results/ChainyResults.data">Chainy</A> data<BR>
+          (So you can <TT>grep</TT> and <TT>sort</TT> and ...)
+</TABLE>
+</CENTER>
+<P>
+<HR><!------------------------------------------------------------------------>
+</BODY>
+</HTML>
